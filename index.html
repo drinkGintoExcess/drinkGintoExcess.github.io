@@ -26,6 +26,8 @@
         nav .name {
             font-size: 22px;
             font-weight: bold;
+            text-decoration: none;
+            color: #222;
         }
 
         nav a {
@@ -51,15 +53,35 @@
         .hero p {
             font-size: 22px;
             color: #666;
+            margin-bottom: 30px;
         }
-    </style>
 
+        /* Resume button */
+        .resume-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #222;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: 0.2s;
+        }
+
+        .resume-button:hover {
+            background-color: #555;
+        }
+
+    </style>
 </head>
+
 
 <body>
 
+    <!-- Navigation -->
     <nav>
-        <div class="name">Fan Lu</div>
+
+        <a class="name" href="/">Fan Lu</a>
 
         <div>
             <a href="/">Home</a>
@@ -67,15 +89,25 @@
             <a href="/Publications/">Publications</a>
             <a href="/cv/">CV</a>
         </div>
+
     </nav>
 
 
+    <!-- Main section -->
     <section class="hero">
+
         <h1>Hi, I'm Fan.</h1>
 
         <p>
             Mechanical Engineer · Researcher · Designer
         </p>
+
+        <a class="resume-button"
+           href="/Fan_Lu_Resume.pdf"
+           target="_blank">
+            My Resume
+        </a>
+
     </section>
 
 </body>
