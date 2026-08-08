@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Technical Drawings | Fan Lu</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222;
+            background: #fff;
+        }
+
+        /* Top navigation */
+        nav {
+            padding: 20px 8%;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .name {
+            font-size: 22px;
+            font-weight: 700;
+            color: #222;
+            text-decoration: none;
+        }
+
+        nav .links {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav .links a {
+            color: #222;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav .links a:hover {
+            color: #777;
+        }
+
+        /* Main page */
+        main {
+            width: 84%;
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 80px 0 120px;
+        }
+
+        .page-title {
+            margin: 0 0 18px;
+            font-size: 48px;
+            line-height: 1.1;
+        }
+
+        .page-intro {
+            margin: 0 0 100px;
+            max-width: 700px;
+            color: #666;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        /* Each row contains one figure + its text */
+        .drawing {
+            display: grid;
+            grid-template-columns: minmax(0, 1.65fr) minmax(220px, 0.75fr);
+            gap: 55px;
+            align-items: center;
+            margin-bottom: 130px;
+        }
+
+        .drawing-image img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .drawing-text {
+            max-width: 320px;
+        }
+
+        .drawing-number {
+            margin: 0 0 10px;
+            font-size: 12px;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: #999;
+        }
+
+        .drawing-title {
+            margin: 0 0 12px;
+            font-size: 20px;
+            line-height: 1.3;
+            font-weight: 600;
+        }
+
+        .caption {
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.65;
+            color: #666;
+        }
+
+        /* LEFT figure: image left, text right */
+        .drawing.left .drawing-image {
+            order: 1;
+        }
+
+        .drawing.left .drawing-text {
+            order: 2;
+            justify-self: start;
+        }
+
+        /* RIGHT figure: text left, image right */
+        .drawing.right {
+            grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.65fr);
+        }
+
+        .drawing.right .drawing-text {
+            order: 1;
+            justify-self: end;
+        }
+
+        .drawing.right .drawing-image {
+            order: 2;
+        }
+
+        /* Mobile */
+        @media (max-width: 760px) {
+            nav {
+                padding: 18px 6%;
+            }
+
+            nav .links {
+                gap: 15px;
+            }
+
+            main {
+                width: 88%;
+                padding-top: 55px;
+            }
+
+            .page-title {
+                font-size: 38px;
+            }
+
+            .page-intro {
+                margin-bottom: 70px;
+            }
+
+            .drawing,
+            .drawing.right {
+                grid-template-columns: 1fr;
+                gap: 22px;
+                margin-bottom: 85px;
+            }
+
+            .drawing.left .drawing-image,
+            .drawing.right .drawing-image {
+                order: 1;
+            }
+
+            .drawing.left .drawing-text,
+            .drawing.right .drawing-text {
+                order: 2;
+                justify-self: start;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a class="name" href="../index.html">Fan Lu</a>
+
+        <div class="links">
+            <a href="../index.html">Home</a>
+            <a href="../projects/index.html">Projects</a>
+            <a href="index.html">Technical Drawings</a>
+        </div>
+    </nav>
+
+    <main>
+
+        <h1 class="page-title">Technical Drawings</h1>
+
+        <p class="page-intro">
+            Selected engineering illustrations, schematics, and technical drawings.
+        </p>
+
+
+        <!-- FIGURE 1 — IMAGE LEFT / TEXT RIGHT -->
+        <section class="drawing left">
+            <div class="drawing-image">
+                <img src="../images/drawing-01.png" alt="Technical drawing 1">
+            </div>
+
+            <div class="drawing-text">
+                <div class="drawing-number">Figure 01</div>
+                <h2 class="drawing-title">Figure title</h2>
+                <p class="caption">
+                    Add a caption, method note, or key observation for this drawing.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- FIGURE 2 — IMAGE RIGHT / TEXT LEFT -->
+        <section class="drawing right">
+            <div class="drawing-text">
+                <div class="drawing-number">Figure 02</div>
+                <h2 class="drawing-title">Figure title</h2>
+                <p class="caption">
+                    Add a caption, method note, or key observation for this drawing.
+                </p>
+            </div>
+
+            <div class="drawing-image">
+                <img src="../images/drawing-02.png" alt="Technical drawing 2">
+            </div>
+        </section>
+
+
+        <!-- FIGURE 3 — IMAGE LEFT / TEXT RIGHT -->
+        <section class="drawing left">
+            <div class="drawing-image">
+                <img src="../images/drawing-03.png" alt="Technical drawing 3">
+            </div>
+
+            <div class="drawing-text">
+                <div class="drawing-number">Figure 03</div>
+                <h2 class="drawing-title">Figure title</h2>
+                <p class="caption">
+                    Add a caption, method note, or key observation for this drawing.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- FIGURE 4 — IMAGE RIGHT / TEXT LEFT -->
+        <section class="drawing right">
+            <div class="drawing-text">
+                <div class="drawing-number">Figure 04</div>
+                <h2 class="drawing-title">Figure title</h2>
+                <p class="caption">
+                    Add a caption, method note, or key observation for this drawing.
+                </p>
+            </div>
+
+            <div class="drawing-image">
+                <img src="../images/drawing-04.png" alt="Technical drawing 4">
+            </div>
+        </section>
+
+
+        <!-- FIGURE 5 — IMAGE LEFT / TEXT RIGHT -->
+        <section class="drawing left">
+            <div class="drawing-image">
+                <img src="../images/drawing-05.png" alt="Technical drawing 5">
+            </div>
+
+            <div class="drawing-text">
+                <div class="drawing-number">Figure 05</div>
+                <h2 class="drawing-title">Figure title</h2>
+                <p class="caption">
+                    Add a caption, method note, or key observation for this drawing.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
