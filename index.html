@@ -56,8 +56,17 @@
             margin-bottom: 30px;
         }
 
+        .resume-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-start;   /* align buttons to the left */
+            margin-top: 28px;
+        }
+        
         .resume-button {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;       /* centers text inside button */
             padding: 12px 24px;
             background-color: #222;
             color: white;
@@ -66,13 +75,10 @@
             font-size: 16px;
             transition: 0.2s;
         }
-        
-        .resume-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-        }
 
+        .resume-button {
+            min-width: 130px;
+        }
         
         .resume-button:hover {
             background-color: #555;
