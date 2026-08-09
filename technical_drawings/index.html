@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,46 +19,56 @@
             background: #fff;
         }
 
-       nav {
-    border-bottom: 1px solid #e5e5e5;
-}
+        /* =========================
+           NAVIGATION
+        ========================== */
 
-.nav-inner {
-    width: 84%;
-    max-width: 1250px;
-    margin: 0 auto;
-    padding: 22px 0;
+        nav {
+            border-bottom: 1px solid #e5e5e5;
+            background: #fff;
+        }
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        .nav-inner {
+            width: 84%;
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 22px 0;
 
-nav .name {
-    font-size: 22px;
-    font-weight: 700;
-    color: #222;
-    text-decoration: none;
-}
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-nav .links {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-}
+        nav .name {
+            font-size: 22px;
+            font-weight: 700;
+            color: #222;
+            text-decoration: none;
+            white-space: nowrap;
+        }
 
-nav .links a {
-    color: #444;
-    text-decoration: none;
-    font-size: 15px;
-    transition: color 0.2s ease;
-}
+        nav .links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
 
-nav .links a:hover {
-    color: #999;
-}
+        nav .links a {
+            color: #444;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.2s ease;
+            white-space: nowrap;
+        }
 
-        /* Main page */
+        nav .links a:hover {
+            color: #999;
+        }
+
+        /* =========================
+           MAIN PAGE
+        ========================== */
+
         main {
             width: 84%;
             max-width: 1250px;
@@ -79,10 +90,16 @@ nav .links a:hover {
             line-height: 1.6;
         }
 
-        /* Each row contains one figure + its text */
+        /* =========================
+           DRAWINGS
+        ========================== */
+
         .drawing {
             display: grid;
-            grid-template-columns: minmax(0, 1.65fr) minmax(220px, 0.75fr);
+            grid-template-columns:
+                minmax(0, 1.65fr)
+                minmax(220px, 0.75fr);
+
             gap: 55px;
             align-items: center;
             margin-bottom: 130px;
@@ -120,7 +137,8 @@ nav .links a:hover {
             color: #666;
         }
 
-        /* LEFT figure: image left, text right */
+        /* Image left / text right */
+
         .drawing.left .drawing-image {
             order: 1;
         }
@@ -130,9 +148,12 @@ nav .links a:hover {
             justify-self: start;
         }
 
-        /* RIGHT figure: text left, image right */
+        /* Text left / image right */
+
         .drawing.right {
-            grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.65fr);
+            grid-template-columns:
+                minmax(220px, 0.75fr)
+                minmax(0, 1.65fr);
         }
 
         .drawing.right .drawing-text {
@@ -144,81 +165,93 @@ nav .links a:hover {
             order: 2;
         }
 
-        /* Mobile */
-@media (max-width: 760px) {
+        /* =========================
+           MOBILE
+        ========================== */
 
-    nav {
-        width: 88%;
-        padding: 18px 0;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-    }
+        @media (max-width: 760px) {
 
-    nav .links {
-        gap: 18px;
-        flex-wrap: wrap;
-    }
+            .nav-inner {
+                width: 88%;
+                padding: 18px 0;
 
-    nav .links a {
-        font-size: 14px;
-    }
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
 
-    nav::after {
-        top: 100px;
-    }
+            nav .links {
+                gap: 18px;
+                flex-wrap: wrap;
+            }
 
-    main {
-        width: 88%;
-        padding-top: 55px;
-    }
+            nav .links a {
+                font-size: 14px;
+            }
 
-    .page-title {
-        font-size: 38px;
-    }
+            main {
+                width: 88%;
+                padding: 55px 0 90px;
+            }
 
-    .page-intro {
-        margin-bottom: 70px;
-    }
+            .page-title {
+                font-size: 38px;
+            }
 
-    .drawing,
-    .drawing.right {
-        grid-template-columns: 1fr;
-        gap: 22px;
-        margin-bottom: 85px;
-    }
+            .page-intro {
+                margin-bottom: 70px;
+            }
 
-    .drawing.left .drawing-image,
-    .drawing.right .drawing-image {
-        order: 1;
-    }
+            .drawing,
+            .drawing.right {
+                grid-template-columns: 1fr;
+                gap: 22px;
+                margin-bottom: 85px;
+            }
 
-    .drawing.left .drawing-text,
-    .drawing.right .drawing-text {
-        order: 2;
-        justify-self: start;
-        max-width: 100%;
-    }
-}
+            .drawing.left .drawing-image,
+            .drawing.right .drawing-image {
+                order: 1;
+            }
+
+            .drawing.left .drawing-text,
+            .drawing.right .drawing-text {
+                order: 2;
+                justify-self: start;
+                max-width: 100%;
+            }
+        }
+
     </style>
 </head>
 
+
 <body>
 
-    <!-- Navigation -->
-<nav>
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
 
-    <a class="name" href="/">Fan Lu</a>
+    <nav>
+        <div class="nav-inner">
 
-    <div class="links">
-        <a href="/">Home</a>
-        <a href="/Projects/">Projects</a>
-        <a href="/Publications/">Publications</a>
-        <a href="/technical_drawings/">Technical Drawings</a>
-    </div>
+            <a class="name" href="/">Fan Lu</a>
 
-</nav>
-    
+            <div class="links">
+                <a href="/">Home</a>
+                <a href="/Projects/">Projects</a>
+                <a href="/Publications/">Publications</a>
+                <a href="/technical_drawings/">Technical Drawings</a>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
     <main>
 
         <h1 class="page-title">Technical Drawings</h1>
@@ -228,100 +261,179 @@ nav .links a:hover {
         </p>
 
 
-        <!-- FIGURE 1 — IMAGE LEFT / TEXT RIGHT -->
+        <!-- FIGURE 1 -->
         <section class="drawing left">
+
             <div class="drawing-image">
-                <img src="../images/drawing-01.png" alt="Technical drawing 1">
+                <img
+                    src="../images/drawing-01.png"
+                    alt="Technical drawing 1"
+                >
             </div>
 
             <div class="drawing-text">
-                <div class="drawing-number">Figure 01</div>
-                <h2 class="drawing-title">Figure title</h2>
+
+                <div class="drawing-number">
+                    Figure 01
+                </div>
+
+                <h2 class="drawing-title">
+                    Figure title
+                </h2>
+
                 <p class="caption">
                     Add a caption, method note, or key observation for this drawing.
                 </p>
+
             </div>
+
         </section>
 
 
-        <!-- FIGURE 2 — IMAGE RIGHT / TEXT LEFT -->
+        <!-- FIGURE 2 -->
         <section class="drawing right">
+
             <div class="drawing-text">
-                <div class="drawing-number">Figure 02</div>
-                <h2 class="drawing-title">Figure title</h2>
+
+                <div class="drawing-number">
+                    Figure 02
+                </div>
+
+                <h2 class="drawing-title">
+                    Figure title
+                </h2>
+
                 <p class="caption">
                     Add a caption, method note, or key observation for this drawing.
                 </p>
+
             </div>
 
             <div class="drawing-image">
-                <img src="../images/drawing-02.png" alt="Technical drawing 2">
+                <img
+                    src="../images/drawing-02.png"
+                    alt="Technical drawing 2"
+                >
             </div>
+
         </section>
 
 
-        <!-- FIGURE 3 — IMAGE LEFT / TEXT RIGHT -->
+        <!-- FIGURE 3 -->
         <section class="drawing left">
+
             <div class="drawing-image">
-                <img src="../images/drawing-03.png" alt="Technical drawing 3">
+                <img
+                    src="../images/drawing-03.png"
+                    alt="Technical drawing 3"
+                >
             </div>
 
             <div class="drawing-text">
-                <div class="drawing-number">Figure 03</div>
-                <h2 class="drawing-title">Figure title</h2>
+
+                <div class="drawing-number">
+                    Figure 03
+                </div>
+
+                <h2 class="drawing-title">
+                    Figure title
+                </h2>
+
                 <p class="caption">
                     Add a caption, method note, or key observation for this drawing.
                 </p>
+
             </div>
+
         </section>
 
 
-        <!-- FIGURE 4 — IMAGE RIGHT / TEXT LEFT -->
+        <!-- FIGURE 4 -->
         <section class="drawing right">
+
             <div class="drawing-text">
-                <div class="drawing-number">Figure 04</div>
-                <h2 class="drawing-title">Figure title</h2>
+
+                <div class="drawing-number">
+                    Figure 04
+                </div>
+
+                <h2 class="drawing-title">
+                    Figure title
+                </h2>
+
                 <p class="caption">
                     Add a caption, method note, or key observation for this drawing.
                 </p>
+
             </div>
 
             <div class="drawing-image">
-                <img src="../images/drawing-04.png" alt="Technical drawing 4">
+                <img
+                    src="../images/drawing-04.png"
+                    alt="Technical drawing 4"
+                >
             </div>
+
         </section>
 
 
-        <!-- FIGURE 5 — IMAGE LEFT / TEXT RIGHT -->
+        <!-- FIGURE 5 -->
         <section class="drawing left">
+
             <div class="drawing-image">
-                <img src="../images/drawing-05.png" alt="Technical drawing 5">
+                <img
+                    src="../images/drawing-05.png"
+                    alt="Technical drawing 5"
+                >
             </div>
 
             <div class="drawing-text">
-                <div class="drawing-number">Figure 05</div>
-                <h2 class="drawing-title">Figure title</h2>
+
+                <div class="drawing-number">
+                    Figure 05
+                </div>
+
+                <h2 class="drawing-title">
+                    Figure title
+                </h2>
+
                 <p class="caption">
                     Add a caption, method note, or key observation for this drawing.
                 </p>
+
             </div>
+
         </section>
 
-        <!-- FIGURE 6 — IMAGE RIGHT / TEXT LEFT -->
+
+        <!-- FIGURE 6 -->
         <section class="drawing right">
+
             <div class="drawing-text">
-                <div class="drawing-number">Figure 06</div>
-                <h2 class="drawing-title">Figure title</h2>
+
+                <div class="drawing-number">
+                    Figure 06
+                </div>
+
+                <h2 class="drawing-title">
+                    Figure title
+                </h2>
+
                 <p class="caption">
                     Add a caption, method note, or key observation for this drawing.
                 </p>
+
             </div>
 
             <div class="drawing-image">
-                <img src="../images/drawing-06.png" alt="Technical drawing 6">
+                <img
+                    src="../images/drawing-06.png"
+                    alt="Technical drawing 6"
+                >
             </div>
+
         </section>
-        
+
     </main>
 
 </body>
