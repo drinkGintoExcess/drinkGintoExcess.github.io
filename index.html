@@ -73,18 +73,42 @@
             width: 84%;
             max-width: 1250px;
             margin: 0 auto;
-            padding: 120px 0;
+            padding: 100px 0 120px;
+
+            display: grid;
+            grid-template-columns: 1.4fr 0.8fr;
+            gap: 90px;
+            align-items: center;
+        }
+
+        .hero-text {
+            max-width: 760px;
         }
 
         .hero h1 {
             font-size: 60px;
             margin: 0 0 15px;
+            line-height: 1.05;
         }
 
-        .hero p {
+        .subtitle {
             font-size: 22px;
             color: #666;
             margin: 0 0 30px;
+            line-height: 1.5;
+        }
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about {
+            max-width: 680px;
+            margin: 0 0 34px;
+
+            font-size: 17px;
+            line-height: 1.7;
+            color: #555;
         }
 
         /* =========================
@@ -95,7 +119,6 @@
             display: flex;
             gap: 15px;
             justify-content: flex-start;
-            margin-top: 28px;
         }
 
         .resume-button {
@@ -118,6 +141,27 @@
 
         .resume-button:hover {
             background-color: #555;
+        }
+
+        /* =========================
+           PORTRAIT
+        ========================== */
+
+        .hero-photo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-photo img {
+            width: 320px;
+            height: 430px;
+
+            object-fit: cover;
+            object-position: center;
+
+            border-radius: 50%;
+            display: block;
         }
 
         /* =========================
@@ -146,20 +190,35 @@
 
             .hero {
                 width: 88%;
-                padding: 75px 0;
+                padding: 65px 0 90px;
+
+                grid-template-columns: 1fr;
+                gap: 55px;
             }
 
             .hero h1 {
                 font-size: 44px;
             }
 
-            .hero p {
+            .subtitle {
                 font-size: 19px;
-                line-height: 1.5;
+            }
+
+            .about {
+                font-size: 16px;
             }
 
             .resume-buttons {
                 flex-wrap: wrap;
+            }
+
+            .hero-photo {
+                justify-content: flex-start;
+            }
+
+            .hero-photo img {
+                width: 250px;
+                height: 340px;
             }
         }
 
@@ -195,29 +254,52 @@
 
     <section class="hero">
 
-        <h1>Hi, I'm Fan.</h1>
+        <!-- LEFT SIDE -->
+        <div class="hero-text">
 
-        <p>
-            Ph.D. Candidate · Mechanical Engineering · University of Michigan
-        </p>
+            <h1>Hi, I'm Fan.</h1>
 
-        <div class="resume-buttons">
+            <p class="subtitle">
+                Ph.D. Candidate · Mechanical Engineering · University of Michigan
+            </p>
 
-            <a
-                class="resume-button"
-                href="/Fan_Lu_Resume.pdf"
-                target="_blank"
+            <p class="about">
+                I am a mechanical engineering researcher focused on heat transfer,
+                thermal management, computational fluid dynamics, and energy systems.
+                My work combines numerical modeling and experiments to understand
+                complex thermal and multiphase transport phenomena.
+            </p>
+
+            <div class="resume-buttons">
+
+                <a
+                    class="resume-button"
+                    href="/Fan_Lu_Resume.pdf"
+                    target="_blank"
+                >
+                    我的简历
+                </a>
+
+                <a
+                    class="resume-button"
+                    href="/Fan_Lu_Resume_08_2026.pdf"
+                    target="_blank"
+                >
+                    My Resume
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+        <div class="hero-photo">
+
+            <img
+                src="/images/fan-lu.jpg"
+                alt="Fan Lu"
             >
-                我的简历
-            </a>
-
-            <a
-                class="resume-button"
-                href="/Fan_Lu_Resume_08_2026.pdf"
-                target="_blank"
-            >
-                My Resume
-            </a>
 
         </div>
 
