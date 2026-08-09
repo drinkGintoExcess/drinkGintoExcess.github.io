@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,32 @@
     <title>Projects | Fan Lu</title>
 
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: #222;
-            background: white;
+        * {
+            box-sizing: border-box;
         }
 
-        /* Navigation */
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222;
+            background: #fff;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
         nav {
-            padding: 20px 8%;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #e5e5e5;
+            background: #fff;
+        }
+
+        .nav-inner {
+            width: 84%;
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 22px 0;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -25,21 +41,37 @@
 
         nav .name {
             font-size: 22px;
-            font-weight: bold;
-            text-decoration: none;
+            font-weight: 700;
             color: #222;
+            text-decoration: none;
+            white-space: nowrap;
         }
 
-        nav a {
-            margin-left: 30px;
-            text-decoration: none;
-            color: #222;
+        nav .links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
         }
 
-        /* Main page */
+        nav .links a {
+            color: #444;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.2s ease;
+            white-space: nowrap;
+        }
+
+        nav .links a:hover {
+            color: #999;
+        }
+
+        /* =========================
+           MAIN PAGE
+        ========================== */
+
         main {
             width: 84%;
-            max-width: 1200px;
+            max-width: 1250px;
             margin: 0 auto;
             padding: 80px 0 120px;
         }
@@ -49,7 +81,10 @@
             margin: 0 0 80px;
         }
 
-        /* Individual project */
+        /* =========================
+           PROJECTS
+        ========================== */
+
         .project {
             margin-bottom: 120px;
         }
@@ -74,12 +109,33 @@
             background: #f5f5f5;
         }
 
-        /* Mobile */
-        @media (max-width: 700px) {
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 760px) {
+
+            .nav-inner {
+                width: 88%;
+                padding: 18px 0;
+
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            nav .links {
+                gap: 18px;
+                flex-wrap: wrap;
+            }
+
+            nav .links a {
+                font-size: 14px;
+            }
 
             main {
                 width: 88%;
-                padding-top: 50px;
+                padding: 55px 0 90px;
             }
 
             .page-title {
@@ -90,31 +146,37 @@
             .project {
                 margin-bottom: 80px;
             }
-
-            nav a {
-                margin-left: 15px;
-            }
         }
+
     </style>
 </head>
 
 
 <body>
 
-    <!-- Navigation -->
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
     <nav>
+        <div class="nav-inner">
 
-        <a class="name" href="/">Fan Lu</a>
+            <a class="name" href="/">Fan Lu</a>
 
-        <div>
-            <a href="/">Home</a>
-            <a href="/Projects/">Projects</a>
-            <a href="/Publications/">Publications</a>
-            <a href="/technical_drawings/">Technical Drawings</a>
+            <div class="links">
+                <a href="/">Home</a>
+                <a href="/Projects/">Projects</a>
+                <a href="/Publications/">Publications</a>
+                <a href="/technical_drawings/">Technical Drawings</a>
+            </div>
+
         </div>
-
     </nav>
 
+
+    <!-- =========================
+         MAIN
+    ========================== -->
 
     <main>
 
@@ -132,8 +194,10 @@
             </p>
 
             <video autoplay muted loop playsinline>
-                <source src="../videos/oscillating-heat-pipe.mp4"
-                        type="video/mp4">
+                <source
+                    src="../videos/oscillating-heat-pipe.mp4"
+                    type="video/mp4"
+                >
             </video>
 
         </section>
@@ -150,8 +214,10 @@
             </p>
 
             <video autoplay muted loop playsinline>
-                <source src="../videos/water-ingress.mp4"
-                        type="video/mp4">
+                <source
+                    src="../videos/water-ingress.mp4"
+                    type="video/mp4"
+                >
             </video>
 
         </section>
@@ -168,13 +234,16 @@
             </p>
 
             <video autoplay muted loop playsinline>
-                <source src="../videos/thermochemical.mp4"
-                        type="video/mp4">
+                <source
+                    src="../videos/thermochemical.mp4"
+                    type="video/mp4"
+                >
             </video>
 
         </section>
 
-                <!-- Battery Project -->
+
+        <!-- Battery Project -->
         <section class="project">
 
             <h2>EV Battery Pack Thermal Runaway</h2>
@@ -185,8 +254,10 @@
             </p>
 
             <video autoplay muted loop playsinline>
-                <source src="../videos/battery-thermal-runaway.mp4"
-                        type="video/mp4">
+                <source
+                    src="../videos/battery-thermal-runaway.mp4"
+                    type="video/mp4"
+                >
             </video>
 
         </section>
@@ -194,4 +265,5 @@
     </main>
 
 </body>
+
 </html>
